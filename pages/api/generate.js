@@ -10,6 +10,7 @@ const basePromptPrefix = `Design a fast gaming pc =< the budget below. The desig
 
 Budget:
 `;
+
 const generateAction = async (req, res) => {
   // Run first prompt
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
@@ -17,7 +18,7 @@ const generateAction = async (req, res) => {
   const baseCompletion = await openai.createCompletion({
     model: "text-davinci-003",
     prompt: `${basePromptPrefix}${req.body.userInput}`,
-    temperature: 0.95,
+    temperature: 0.9,
     max_tokens: 250,
   });
 
